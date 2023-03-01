@@ -42,7 +42,7 @@ y_test = test.sub_event_type
 start = datetime.now()
 logging.info(f"starting count vectorizer at {start}")
 
-Count Vectorizer
+# Count Vectorizer
 X_train, X_test = createCountVectorizer().transform(x_train, x_test)
 
 # LogisticRegression
@@ -198,7 +198,7 @@ evaluation.evaluate_flat(level=2)
 evaluation.save_flat_predictions(x_test=x_test)
 evaluation.make_confusionmatrix()
 
-# Cross Validation
+# #Cross Validation
 # flat_cross_validate(
 #     local_classifier=createLogisticRegression(),
 #     vectorizer=createBERTVectorizer(),

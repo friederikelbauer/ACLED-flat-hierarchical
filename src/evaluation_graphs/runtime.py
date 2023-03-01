@@ -35,10 +35,10 @@ plt.show()
 
 
 # BERT visualization
-# fig, ax = plt.subplots()
-# ax.plot(mode, [5696, 2582], label="Logistic Regression")
-# ax.plot(mode, [1785, 1239], label="Support Vector Machine")
-# ax.plot(mode, [2796, 4255], label="Random Forest")
-# ax.set_title("BERT Vectorizer comparison")
-# ax.legend()
-# plt.show()
+fig, ax = plt.subplots()
+ax.plot(mode, [5696, 2582], label="Logistic Regression")
+ax.plot(mode, [1785, 1239], label="Support Vector Machine")
+ax.plot(mode, [2796, 4255], label="Random Forest")
+ax.set_title("BERT Vectorizer comparison")
+ax.legend()
+plt.show()

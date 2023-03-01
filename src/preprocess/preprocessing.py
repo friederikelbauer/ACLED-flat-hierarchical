@@ -18,7 +18,7 @@ settings = Settings(_env_file="paths/.env.eda")
 
 
 class PreprocessingData:
-    def __init__(self, data, stopwords):
+    def __init__(self, data):
         self.data = data
 
     def trim_data(self):

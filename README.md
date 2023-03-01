@@ -10,8 +10,8 @@ The combination of feature extractor + classifier + classification mode (flat or
 The file structure is as follows:
 
     acled-classification
-    ├── data
-    │ ├── raw                       # includes all the downloads from the ACLED data export tool
+    ├── data                        # folder needs to be created
+    │ ├── raw                       # includes all the downloads from the ACLED data export tool, needs to be manually filled by user
     │ └── processed                 # all training and test data that was processed is saved here
     │
     ├── paths
@@ -52,7 +52,13 @@ The file structure is as follows:
     │ │
     │ ├── results
     │ │ ├── cross_validation
+    │ │ │   ├── lr
+    │ │ │   ├── svm
+    │ │ │   └── rf
     │ │ └── prediction_results
+    │ │     ├── lr
+    │ │     ├── svm
+    │ │     └── rf
     │ │
     │ ├── utils
     │ │ ├── conversion_functions.py

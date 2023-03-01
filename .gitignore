@@ -1,6 +1,5 @@
 /data/raw
-#/src/logs
-#/src/results
+/data/processed
 .DS_Store
 .DS_Store?
 
