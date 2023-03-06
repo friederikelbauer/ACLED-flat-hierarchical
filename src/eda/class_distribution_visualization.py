@@ -59,7 +59,7 @@ sub_event_type_distribution = pd.DataFrame(sub_event_types)
 
 
 # Visualization of event type counts
-f, ax = plt.subplots(figsize=(2, 4))
+f, ax = plt.subplots(figsize=(5, 4))
 sns.countplot(
     x=data["event_type"],
     order=[
@@ -70,19 +70,26 @@ sns.countplot(
         "Riots",
         "Strategic developments",
     ],
-    palette=["#4A4A4A"],
+    palette=[
+        (27 / 255, 210 / 255, 243 / 255, 1),
+        (99 / 255, 110 / 255, 251 / 255, 1),
+        (255 / 255, 161 / 255, 90 / 255, 1),
+        (2 / 255, 204 / 255, 150 / 255, 1),
+        (239 / 255, 85 / 255, 59 / 255, 1),
+        (171 / 255, 99 / 255, 250 / 255, 1),
+    ],
 )
 ax.set(xlabel="Event types", ylabel="count")
 ax.tick_params(axis="x", rotation=90)
 plt.setp(
     ax,
     xticklabels=[
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
+        "Battles",
+        "Explosions/ \n Remote violence",
+        "Violence against \n civilians",
+        "Protests",
+        "Riots",
+        "Strategic \n developments",
     ],
 )
 plt.legend([], [], frameon=False)
@@ -118,6 +125,38 @@ sns.countplot(
         "Looting/property destruction",
         "Non-violent transfer of territory",
         "Other",
+    ],
+    palette=[
+        (27 / 255, 210 / 255, 243 / 255, 1),
+        (27 / 255, 210 / 255, 243 / 255, 1),
+        (27 / 255, 210 / 255, 243 / 255, 1),
+        #
+        (99 / 255, 110 / 255, 251 / 255, 1),
+        (99 / 255, 110 / 255, 251 / 255, 1),
+        (99 / 255, 110 / 255, 251 / 255, 1),
+        (99 / 255, 110 / 255, 251 / 255, 1),
+        (99 / 255, 110 / 255, 251 / 255, 1),
+        (99 / 255, 110 / 255, 251 / 255, 1),
+        #
+        (255 / 255, 161 / 255, 90 / 255, 1),
+        (255 / 255, 161 / 255, 90 / 255, 1),
+        (255 / 255, 161 / 255, 90 / 255, 1),
+        #
+        (2 / 255, 204 / 255, 150 / 255, 1),
+        (2 / 255, 204 / 255, 150 / 255, 1),
+        (2 / 255, 204 / 255, 150 / 255, 1),
+        #
+        (239 / 255, 85 / 255, 59 / 255, 1),
+        (239 / 255, 85 / 255, 59 / 255, 1),
+        #
+        (171 / 255, 99 / 255, 250 / 255, 1),
+        (171 / 255, 99 / 255, 250 / 255, 1),
+        (171 / 255, 99 / 255, 250 / 255, 1),
+        (171 / 255, 99 / 255, 250 / 255, 1),
+        (171 / 255, 99 / 255, 250 / 255, 1),
+        (171 / 255, 99 / 255, 250 / 255, 1),
+        (171 / 255, 99 / 255, 250 / 255, 1),
+        (171 / 255, 99 / 255, 250 / 255, 1),
     ],
 )
 # ax.xaxis.set_major_formatter(mpl.ticker.ScalarFormatter())
