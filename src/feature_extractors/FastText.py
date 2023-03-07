@@ -49,14 +49,15 @@ class createFastText:
         """
         self.x_train = x_train
         self.x_test = x_test
-        self.model = fasttext.load_model("cc.en.300.bin")
 
         # tokenization of the data
         self.x_train = self.x_train.apply(lambda x: [word for word in x.split()])
         self.x_test = self.x_test.apply(lambda x: [word for word in x.split()])
 
-        # fasttext.util.download_model("en", if_exists="ignore") #downloading and saving once
-        # ft.save_model("cc.en.300.bin")
+        fasttext.util.download_model(
+            "en", if_exists="ignore"
+        )  # downloading and saving once
+        ft.save_model("cc.en.300.bin")
         ft = fasttext.load_model("cc.en.300.bin")
         self.model = ft
 
