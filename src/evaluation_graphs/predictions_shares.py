@@ -273,7 +273,7 @@ def create_correct_predictions_plot(classifier: str, mode: str) -> None:
     count_data = pd.read_csv(
         f"src/results/prediction_results/{classifier}/{classifier}_{mode}_count_vectorizer{end_path}"
     )
-    actual = count_data["y_test_sub_event"].value_counts().to_dict()
+    actual = count_data["y_test_sub_event"].value_counts(normalize=True).to_dict()
 
     count_data["correct"] = np.where(
         count_data["y_pred_sub_event"] == count_data["y_test_sub_event"],
@@ -281,7 +281,9 @@ def create_correct_predictions_plot(classifier: str, mode: str) -> None:
         None,
     )
     count_data.dropna(inplace=True)
-    count_predicted = count_data["y_pred_sub_event"].value_counts().to_dict()
+    count_predicted = (
+        count_data["y_pred_sub_event"].value_counts(normalize=True).to_dict()
+    )
 
     # actuall class
 
@@ -353,7 +355,9 @@ def create_correct_predictions_plot(classifier: str, mode: str) -> None:
 
     tfidf_data.dropna(inplace=True)
 
-    tfidf_predicted = tfidf_data["y_pred_sub_event"].value_counts().to_dict()
+    tfidf_predicted = (
+        tfidf_data["y_pred_sub_event"].value_counts(normalize=True).to_dict()
+    )
 
     tfidf = [
         tfidf_predicted["Armed clash"],
@@ -394,7 +398,9 @@ def create_correct_predictions_plot(classifier: str, mode: str) -> None:
 
     word2vec_data.dropna(inplace=True)
 
-    word2vec_predicted = word2vec_data["y_pred_sub_event"].value_counts().to_dict()
+    word2vec_predicted = (
+        word2vec_data["y_pred_sub_event"].value_counts(normalize=True).to_dict()
+    )
     word2vec = [
         word2vec_predicted["Armed clash"],
         word2vec_predicted["Government regains territory"],
@@ -434,7 +440,9 @@ def create_correct_predictions_plot(classifier: str, mode: str) -> None:
 
     fasttext_data.dropna(inplace=True)
 
-    fasttext_predicted = fasttext_data["y_pred_sub_event"].value_counts().to_dict()
+    fasttext_predicted = (
+        fasttext_data["y_pred_sub_event"].value_counts(normalize=True).to_dict()
+    )
     fasttext = [
         fasttext_predicted["Armed clash"],
         fasttext_predicted["Government regains territory"],
@@ -474,7 +482,9 @@ def create_correct_predictions_plot(classifier: str, mode: str) -> None:
 
     bert_data.dropna(inplace=True)
 
-    bert_predicted = bert_data["y_pred_sub_event"].value_counts().to_dict()
+    bert_predicted = (
+        bert_data["y_pred_sub_event"].value_counts(normalize=True).to_dict()
+    )
     bert = [
         bert_predicted["Armed clash"],
         bert_predicted["Government regains territory"],
@@ -538,3 +548,6 @@ def create_correct_predictions_plot(classifier: str, mode: str) -> None:
     ax.legend(loc="upper left", ncols=5, fontsize=18)
 
     plt.show()
+
+
+create_correct_predictions_plot(classifier="lr", mode="flat")
